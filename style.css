@@ -1,0 +1,130 @@
+@font-face {
+    font-family: Dax;
+    src: url("VNF-Dax Regular.ttf");
+}
+
+body {
+    font-family: Dax, Helvetica Neue, Helvetica, Arial;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5vw;
+}
+
+h1 {
+    text-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+}
+
+div {
+    margin: 0;
+    padding: 0;
+    float: left;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+    color: black;
+    font-size: 30px;
+    transform: translate(-100%);
+    transition: transform 1s ease-out;
+}
+
+#firstParagraph {
+    margin-left: 22vw;
+    transition: color .5s ease-out;
+}
+
+#firstParagraph:hover {
+    color: #244F75;
+}
+
+article {
+    float: left;
+    height: 100vh;
+    width: 20%;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    -o-transition: background-color .5s ease-out;
+    -ms-transition: background-color .5s ease-out;
+    -moz-transition: background-color .5s ease-out;
+    -webkit-transition: background-color .5s ease-out;
+    transition: background-color .5s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+article::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /*transform: skew(0deg);*/
+    z-index: 1;
+    transition: opacity .5s ease-out, transform .5s ease-out;
+}
+
+article:hover::after {
+    opacity: 0.05;
+    transform: skew(-15deg);
+    /*transform: translate(12vw);*/
+}
+
+article > * {
+    z-index: 2;
+}
+
+article:nth-child(1):hover {
+    background-color: #244F75;
+}
+
+article:nth-child(2):hover {
+    background-color: #60BFBF;
+}
+
+article:nth-child(3):hover {
+    background-color: #8C4B7E;
+}
+
+article:nth-child(4):hover {
+    background-color: #F8BB44;
+}
+
+article:nth-child(5):hover {
+    background-color: #F24B4B;
+}
+
+@media only screen and (max-width: 600px){
+    article {
+        height: 20vh;
+        width: 100%;
+    }
+
+    body {
+        font-size: 5vh;
+    }
+
+    article:hover::after {
+        transform: skew(-45deg);
+        /*transform: translate(12vw);*/
+    }
+}
+
+@media only screen and (orientation: portrait){
+    article {
+        height: 20vh;
+        width: 100%;
+    }
+
+    body {
+        font-size: 5vh;
+    }
+}
